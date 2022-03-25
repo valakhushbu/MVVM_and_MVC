@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         //mvvm with coroutines
-        val apiInterfaceMvvm = RetrofitClientMvvm.getInstance().create(ApiInterfaceMvvm::class.java)
+        val apiInterfaceMvvm = ApiClientMvvm.getInstance().create(ApiInterfaceMvvm::class.java)
         repoHelper = RepoHelper(apiInterfaceMvvm)
 
         mainViewModel = ViewModelProvider(this, ViewModelFactory(repoHelper))[MainViewModel::class.java]
